@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+     <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+    <h1 class="text-center bg-dark text-white col-lg-12 m-auto d-block">Complete Form validation</h1><br>
+
+   <div class="container">
+       <form onsubmit="return validation()"><br>
+        
+           <div class="col-lg-8 m-auto d-block">
+
+           
+           <div class="form-group">
+               <label for="username">Username:</label>
+               <input type="text" id="username" class="form-control" autocomplete="off">
+               <span id="usererror"></span>
+           </div>
+
+           <div class="form-group">
+               <label for="password">Password:</label>
+               <input type="text" id="password" class="form-control" autocomplete="off">
+           </div>
+
+           <div class="form-group">
+            <label for="conpassword">Confirm Password:</label>
+            <input type="text" id="conpass" class="form-control" autocomplete="off">
+        </div>
+
+           <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="text" id="email" class="form-control" autocomplete="off">
+        </div>
+
+        <div class="form-group">
+            <label for="mobile">Mobile:</label>
+            <input type="text" id="mobile" class="form-control" autocomplete="off">
+        </div>
+        <div>
+            <input type="submit" name="" class="btn btn-primary" id="submit">
+        </div>
+
+    </div>
+
+       </form>
+   </div>
+
+   <script type="text/javascript">
+  
+
+     function validation(){
+
+    var username = document.getElementById('username').value;
+    var password = document.getElementById('password').value;
+    var conpass = document.getElementById('conpass').value;
+    var email = document.getElementById('email').value;
+    var mobile = document.getElementById('mobile').value;
+
+    var usercheck = / ^[A-Za-z. ]{3,30)$/ ;
+    var passwordcheck = / ^(?=.*[0-9])(?=.*[!@#$%&*^])[A-Za-z0-9!@#$%^&*]{8,16}$/ ;
+    var emailcheck = / [A-Z a-z]{3,}@[A-Za-z]{3,}[.]{1}[A-Za-z.]{2,6}$/ ;
+    var mobilecheck = / [789]{1}[0-9]{9}$/ ;
+
+    
+    if (usercheck.test(username))
+    {
+        document.getElementById('usererror').innerHTML=" ";
+    }
+    else
+    {
+        document.getElementById('usererror').innerHTML="** username incorrect";
+        return false;
+
+    }
+
+    }
+    
+    
+
+   </script>
+   
+
+    
+</body>
+</html>
